@@ -1,9 +1,7 @@
 name: Hello world!
 
 on:
-  push:
-    branches:
-      - master
+  fork
 
 
 jobs:
