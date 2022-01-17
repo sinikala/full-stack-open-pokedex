@@ -41,3 +41,4 @@ jobs:
           heroku_email: "${{secrets.HEROKU_EMAIL}}"
           healthcheck: "https://kaapon-pokedex.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
