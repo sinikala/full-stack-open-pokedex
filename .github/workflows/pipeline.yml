@@ -39,4 +39,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "kaapon-pokedex"
           heroku_email: "${{secrets.HEROKU_EMAIL}}"
-          
+          healthcheck: "https://kaapon-pokedex.herokuapp.com/health"
+          checkstring: "ok"
