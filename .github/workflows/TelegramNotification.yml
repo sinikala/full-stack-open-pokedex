@@ -10,7 +10,7 @@ jobs:
   hello_tg:
     runs-on: ubuntu-18.04
     steps:      
-      - name: send telegram message on push
+      - name: send telegram  group message on push
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
@@ -22,3 +22,10 @@ jobs:
             Repository: ${{ github.repository }}
             
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+      - name: send direct telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_ME }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+
