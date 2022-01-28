@@ -20,32 +20,32 @@ jobs:
       - name: npm install 
         run: npm install  
       
-      - name: lint
-        run: npm run eslint
+      #- name: lint
+      #  run: npm run eslint
       
-      - name: build
-        run: npm run build
+      #- name: build
+      #  run: npm run build
       
-      - name: test
-        run: npm run test
+      #- name: test
+      #  run: npm run test
       
-      - name: e2e tests
-        uses: cypress-io/github-action@v2
-        with:
-          command: npm run test:e2e
-          start: npm run start-prod
-          wait-on: http://localhost:5000
+      # - name: e2e tests
+      #   uses: cypress-io/github-action@v2
+      #   with:
+      #     command: npm run test:e2e
+      #     start: npm run start-prod
+      #     wait-on: http://localhost:5000
 
       - name: deploy
-        if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
+        #if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "kaapon-pokedex"
           heroku_email: "${{secrets.HEROKU_EMAIL}}"
-          healthcheck: "https://kaapon-pokedex.herokuapp.com/health"
-          checkstring: "ok"
-          rollbackonhealthcheckfailed: true
+          #healthcheck: "https://kaapon-pokedex.herokuapp.com/health"
+          #checkstring: "ok"
+          #rollbackonhealthcheckfailed: true
 
       - uses: actions/checkout@v2
       - name: Bump version and push tag
@@ -55,6 +55,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: patch
+      
 
 
 
