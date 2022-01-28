@@ -13,9 +13,8 @@ const PokemonList = ({ pokemonList }) => {
           </div>
         </Link>
       ))}
-    
+    </div>
   )
 }
 
 export default PokemonList
-</div>
