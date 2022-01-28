@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const PokemonlList = ({ pokemonList }) => {
+const PokemonList = ({ pokemonList }) => {
   return (
     <div className="list-container">
       {pokemonList.map(({ id, name }) => (
@@ -13,8 +13,9 @@ const PokemonlList = ({ pokemonList }) => {
           </div>
         </Link>
       ))}
-    </div>
+    
   )
 }
 
 export default PokemonList
+</div>
